@@ -1,0 +1,55 @@
+{
+    "name": "avetik-dev/resova-api-php",
+    "description": "Resova API PHP7 client",
+    "homepage": "https://developers.resova.com/",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "resova",
+        "client",
+        "rest-api",
+        "api-client",
+        "api",
+        "laravel",
+        "package",
+        "facade"
+    ],
+    "authors": [
+        {
+            "name": "Paul Rock",
+            "email": "paul@drteam.rocks"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Resova\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Resova\\Tests\\": "./tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "vlucas/phpdotenv": "^3.6",
+        "orchestra/testbench": "^3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Resova\\Laravel\\ClientServiceProvider"
+            ],
+            "aliases": {
+                "ResovaApi": "Resova\\Laravel\\ClientFacade"
+            }
+        }
+    }
+}
